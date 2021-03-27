@@ -1,8 +1,11 @@
 name: NanoPi R2S Lean's OpenWrt
 on:
-  push:
-    paths:
-      - 'README.md'
+  repository_dispatch:
+  workflow_dispatch:
+  schedule:
+    - cron: 0 17 * * *
+  # watch:
+  #   types: started
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
